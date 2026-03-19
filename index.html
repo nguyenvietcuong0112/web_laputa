@@ -973,7 +973,8 @@
 
         .ladi-wraper {
             margin: 0 auto;
-            width: 420px;
+            width: 100%;
+            max-width: 420px;
             transition: all 0.3s ease;
         }
 
@@ -981,18 +982,15 @@
             font-family: "Open Sans", sans-serif
         }
 
-        /* Premium Desktop View Styling */
         @media (min-width: 768px) {
             body {
                 background: radial-gradient(circle at top, #242424 0%, #000000 100%);
                 background-attachment: fixed;
-                display: flex;
-                justify-content: center;
-                align-items: flex-start;
-                padding: 40px 0;
                 min-height: 100vh;
                 position: relative;
                 overflow-x: hidden;
+                margin: 0;
+                padding: 0;
             }
 
             body::before {
@@ -1014,37 +1012,75 @@
             }
 
             .ladi-wraper {
-                width: 420px;
-                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 215, 0, 0.05);
-                border: 1px solid rgba(255, 215, 0, 0.15);
-                border-radius: 30px;
-                background-color: #181818;
-                height: max-content;
-                min-height: calc(100vh - 80px);
-                max-height: 95vh;
-                overflow-y: auto;
-                scrollbar-width: thin;
-                scrollbar-color: rgba(255, 215, 0, 0.2) transparent;
+                width: 100%;
+                max-width: 100%;
+                box-shadow: none;
+                border: none;
+                border-radius: 0;
+                background-color: transparent;
+                height: auto;
+                max-height: none;
+                overflow-y: visible;
+                display: block;
                 z-index: 1;
             }
 
-            /* Hide scrollbar for Chrome/Safari */
-            .ladi-wraper::-webkit-scrollbar {
-                width: 4px;
-            }
-
-            .ladi-wraper::-webkit-scrollbar-thumb {
-                background: rgba(255, 215, 0, 0.2);
-                border-radius: 10px;
-            }
-
-            .ladi-wraper::-webkit-scrollbar-track {
-                background: transparent;
-            }
-
-            /* Add a subtle glow aesthetic to sections */
             .ladi-section {
+                width: 100%;
+                display: flex;
+                justify-content: center;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            }
+
+            .ladi-container {
+                width: 960px;
+                flex-shrink: 0;
+                position: relative;
+                margin: 0 auto;
+            }
+
+            /* Widening main visuals */
+            #GROUP10,
+            #IMAGE1,
+            #GALLERY3,
+            #SECTION4 {
+                width: 960px !important;
+            }
+
+            #IMAGE1>.ladi-image>.ladi-image-background,
+            #GROUP10>.ladi-image>.ladi-image-background {
+                width: 960px !important;
+                left: 0 !important;
+            }
+
+            /* Centering branding and text */
+            #IMAGE2,
+            #HEADLINE3,
+            #HEADLINE4,
+            #HEADLINE5,
+            #PARAGRAPH1,
+            #PARAGRAPH4,
+            #PARAGRAPH8 {
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+            }
+
+            /* Aligning verified icon correctly next to the title */
+            #GROUP3 {
+                left: calc(50% + 100px) !important;
+                transform: none !important;
+                top: 284.5px !important;
+            }
+
+            /* Adjusting logo hover since we added transform */
+            #IMAGE2:hover {
+                transform: translateX(-50%) scale(1.05) !important;
+            }
+
+            /* Premium Desktop Enhancements */
+            .ladi-section-background {
+                width: 100% !important;
+                left: 0 !important;
             }
         }
     </style>
