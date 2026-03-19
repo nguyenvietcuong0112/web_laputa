@@ -981,115 +981,6 @@
         body {
             font-family: "Open Sans", sans-serif
         }
-
-        @media (min-width: 768px) {
-            body {
-                background: radial-gradient(circle at top, #242424 0%, #000000 100%);
-                background-attachment: fixed;
-                min-height: 100vh;
-                position: relative;
-                overflow-x: hidden;
-                margin: 0;
-                padding: 0;
-            }
-
-            body::before {
-                content: "";
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-image:
-                    radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
-                    radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
-                    radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px);
-                background-size: 550px 550px, 350px 350px, 250px 250px;
-                background-position: 0 0, 40px 60px, 130px 270px;
-                opacity: 0.15;
-                pointer-events: none;
-                z-index: 0;
-            }
-
-            .ladi-wraper {
-                width: 100%;
-                max-width: 100%;
-                box-shadow: none;
-                border: none;
-                border-radius: 0;
-                background-color: transparent;
-                height: auto;
-                max-height: none;
-                overflow-y: visible;
-                display: block;
-                z-index: 1;
-            }
-
-            .ladi-section,
-            #SECTION4 {
-                width: 100% !important;
-                max-width: 100vw !important;
-                display: flex !important;
-                justify-content: center !important;
-                left: 0 !important;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-            }
-
-            .ladi-container {
-                width: 960px;
-                flex-shrink: 0;
-                position: relative;
-                margin: 0 auto;
-            }
-
-            /* Widening main visuals */
-            #GROUP10,
-            #IMAGE1,
-            #GALLERY3 {
-                width: 960px !important;
-            }
-
-            #IMAGE1>.ladi-image>.ladi-image-background,
-            #GROUP10>.ladi-image>.ladi-image-background {
-                width: 960px !important;
-                left: 0 !important;
-            }
-
-            /* Centering branding, text, groups, and lines with high priority */
-            #IMAGE2,
-            #HEADLINE3,
-            #HEADLINE4,
-            #HEADLINE5,
-            #HEADLINE37,
-            #HEADLINE38,
-            #PARAGRAPH1,
-            #PARAGRAPH4,
-            #PARAGRAPH8,
-            #GROUP32,
-            #LINE3 {
-                left: 50% !important;
-                right: auto !important;
-                transform: translateX(-50%) !important;
-            }
-
-            /* Aligning verified icon correctly next to the title */
-            #GROUP3 {
-                left: calc(50% + 100px) !important;
-                transform: none !important;
-                top: 284.5px !important;
-            }
-
-            /* Adjusting logo hover since we added transform */
-            #IMAGE2:hover {
-                transform: translateX(-50%) scale(1.05) !important;
-            }
-
-            /* Premium Desktop Enhancements */
-            .ladi-section-background {
-                width: 100% !important;
-                left: 0 !important;
-            }
-        }
     </style>
     <style id="style_element" type="text/css">
         #SECTION4 {
@@ -1834,6 +1725,87 @@
             /* Logo hover consistency */
             #IMAGE2:hover {
                 transform: translateX(-50%) scale(1.05) !important;
+            }
+        }
+    </style>
+    <style type="text/css">
+        /* Global Badge Removal */
+        .ladipage_flow_badge,
+        .ladi-branding,
+        #ladipage_flow_badge,
+        [class*="badge"],
+        .ladi-branding {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+
+        /* Desktop Layout & Centering Stabilized Overrides */
+        @media (min-width: 768px) {
+            body {
+                background: radial-gradient(circle at top, #242424 0%, #000000 100%) !important;
+                background-attachment: fixed !important;
+            }
+
+            .ladi-wraper {
+                width: 100% !important;
+                max-width: 100% !important;
+                display: block !important;
+            }
+
+            .ladi-section,
+            #SECTION4 {
+                width: 100% !important;
+                max-width: 100vw !important;
+                display: flex !important;
+                justify-content: center !important;
+                left: 0 !important;
+            }
+
+            .ladi-container {
+                width: 960px !important;
+                margin: 0 auto !important;
+                position: relative !important;
+            }
+
+            /* Centering Branding & Menu Elements Across Full Viewport */
+            #IMAGE2,
+            #HEADLINE4,
+            #HEADLINE3,
+            #HEADLINE5,
+            #PARAGRAPH1,
+            #PARAGRAPH4,
+            #PARAGRAPH8,
+            #GROUP32,
+            #LINE3,
+            #HEADLINE37,
+            #HEADLINE38 {
+                left: 50% !important;
+                right: auto !important;
+                transform: translateX(-50%) !important;
+                position: absolute !important;
+            }
+
+            /* Widen Cover/Gallery to fit 960px */
+            #GROUP10,
+            #IMAGE1,
+            #GALLERY3 {
+                width: 960px !important;
+                left: 0 !important;
+            }
+
+            /* Verified Checkmark Alignment */
+            #GROUP3 {
+                left: calc(50% + 100px) !important;
+                transform: none !important;
+                top: 284.5px !important;
+            }
+
+            /* Premium background stretch */
+            .ladi-section-background {
+                width: 100% !important;
+                left: 0 !important;
             }
         }
     </style>
