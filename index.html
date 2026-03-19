@@ -1757,6 +1757,86 @@
         "a": "paragraph"
     }
 }</script>
+    <style type="text/css">
+        /* Global Badge Removal */
+        .ladipage_flow_badge,
+        .ladi-branding,
+        #ladipage_flow_badge,
+        [class*="badge"] {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+
+        /* Desktop Layout Fixes */
+        @media (min-width: 768px) {
+            .ladi-wraper {
+                width: 100%;
+                max-width: 100%;
+                display: block;
+            }
+
+            .ladi-section,
+            #SECTION4 {
+                width: 100% !important;
+                max-width: 100vw !important;
+                display: flex !important;
+                justify-content: center !important;
+                left: 0 !important;
+            }
+
+            .ladi-container {
+                width: 960px;
+                margin: 0 auto;
+                position: relative;
+            }
+
+            /* Centering Core Branding & Menu Elements */
+            #IMAGE2,
+            #HEADLINE4,
+            #HEADLINE3,
+            #HEADLINE5,
+            #PARAGRAPH1,
+            #PARAGRAPH4,
+            #PARAGRAPH8,
+            #GROUP32,
+            #LINE3,
+            #HEADLINE37,
+            #HEADLINE38 {
+                left: 50% !important;
+                right: auto !important;
+                transform: translateX(-50%) !important;
+                position: absolute !important;
+            }
+
+            /* Specific widening for main visuals to fit 960px column */
+            #GROUP10,
+            #IMAGE1,
+            #GALLERY3 {
+                width: 960px !important;
+                left: 0 !important;
+            }
+
+            #IMAGE1>.ladi-image>.ladi-image-background,
+            #GROUP10>.ladi-image>.ladi-image-background {
+                width: 100% !important;
+                left: 0 !important;
+            }
+
+            /* Verified icon relative to centered title */
+            #GROUP3 {
+                left: calc(50% + 100px) !important;
+                transform: none !important;
+                top: 284.5px !important;
+            }
+
+            /* Logo hover consistency */
+            #IMAGE2:hover {
+                transform: translateX(-50%) scale(1.05) !important;
+            }
+        }
+    </style>
     <script id="script_ladipage_run" type="text/javascript">
         (function () { var run = function () { if (typeof window.LadiPageScript == "undefined" || typeof window.ladi == "undefined" || window.ladi == undefined) { setTimeout(run, 100); return; } window.LadiPageApp = window.LadiPageApp || new window.LadiPageAppV2(); window.LadiPageScript.runtime.ladipage_id = '6532310662539e001289fbf9'; window.LadiPageScript.runtime.publish_platform = 'LADIPAGEDNS'; window.LadiPageScript.runtime.is_mobile_only = true; window.LadiPageScript.runtime.version = '1766572470135'; window.LadiPageScript.runtime.cdn_url = 'https://w.ladicdn.com/v5/source/'; window.LadiPageScript.runtime.DOMAIN_SET_COOKIE = ["thelaputa.vn"]; window.LadiPageScript.runtime.DOMAIN_FREE = ["preview.ldpdemo.com", "ldp.page"]; window.LadiPageScript.runtime.bodyFontSize = 12; window.LadiPageScript.runtime.store_id = ""; window.LadiPageScript.runtime.store_ladiuid = "5c8b2b6c039c0e4c10d3b06c"; window.LadiPageScript.runtime.time_zone = 7; window.LadiPageScript.runtime.currency = "VND"; window.LadiPageScript.runtime.convert_replace_str = true; window.LadiPageScript.runtime.desktop_width = 960; window.LadiPageScript.runtime.mobile_width = 420; window.LadiPageScript.runtime.tracking_button_click = true; window.LadiPageScript.runtime.publish_time = 1766734936750; window.LadiPageScript.runtime.lang = "vi"; window.LadiPageScript.run(true); window.LadiPageScript.runEventScroll(); }; run(); })();
     </script>
