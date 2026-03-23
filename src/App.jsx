@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import Description from './components/Description'
 import Gallery from './components/Gallery'
 import Footer from './components/Footer'
+import ContactButton from './components/ContactButton'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Description />
       <Gallery />
       <Footer />
+      <ContactButton />
     </div>
   )
 }
