@@ -23,7 +23,6 @@
 .slider-track {
     display: flex;
     transition: transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
-    /* Smoother, more natural slide */
     width: 100%;
 }
 
@@ -63,7 +62,6 @@
 @media (max-width: 768px) {
     .nav-arrow {
         display: none;
-        /* Swipe is better on mobile */
     }
 }
 
@@ -72,22 +70,29 @@
     height: 32px;
 }
 
-/* Thumbnails Section */
+.nav-arrow.prev {
+    left: 0;
+}
+
+.nav-arrow.next {
+    right: 0;
+}
+
+/* Thumbnails Section - More compact for mobile */
 .thumbnails-wrapper {
     background-color: var(--bg-color);
-    padding: 15px 0;
+    padding: 12px 0;
     display: flex;
     align-items: center;
     width: 100%;
     overflow: hidden;
-    border-top: 1px solid #1a1a1a;
 }
 
 .thumbnails-scroll {
     display: flex;
     overflow-x: auto;
-    gap: 12px;
-    padding: 0 15px;
+    gap: 10px;
+    padding: 0 12px;
     scrollbar-width: none;
     -ms-overflow-style: none;
     flex: 1;
@@ -98,15 +103,16 @@
 }
 
 .thumb-item {
-    min-width: 85px;
-    /* Larger, more readable on mobile */
-    height: 120px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 65px;
+    /* Fixed width for better fitting */
+    height: 90px;
+    /* Fixed height for consistency */
+    border: 1px solid rgba(255, 255, 255, 0.15);
     cursor: pointer;
-    opacity: 0.4;
+    opacity: 0.45;
     transition: all 0.3s ease;
     flex-shrink: 0;
-    border-radius: 4px;
+    border-radius: 3px;
     overflow: hidden;
     background-color: #000;
 }
@@ -114,8 +120,7 @@
 .thumb-item.active {
     border-color: #fff;
     opacity: 1;
-    transform: scale(1.02);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transform: scale(1.04);
 }
 
 .thumb-item img {
@@ -124,10 +129,14 @@
     object-fit: cover;
 }
 
-/* Specific adjustment for very small screens */
-@media (max-width: 360px) {
+/* Desktop sizing adjustments */
+@media (min-width: 421px) {
     .thumb-item {
-        min-width: 70px;
-        height: 100px;
+        width: 80px;
+        height: 110px;
+    }
+
+    .thumbnails-wrapper {
+        padding: 20px 0;
     }
 }
