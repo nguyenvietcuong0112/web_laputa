@@ -1,6 +1,6 @@
 .gallery-container {
     width: 100%;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 
 .main-view {
@@ -9,11 +9,10 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     background-color: var(--bg-color);
     overflow: hidden;
     touch-action: pan-y;
-    /* Allow vertical scroll while swiping horizontally */
 }
 
 .slider-container {
@@ -23,8 +22,8 @@
 
 .slider-track {
     display: flex;
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    /* Faster, snappy transition */
+    transition: transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+    /* Smoother, more natural slide */
     width: 100%;
 }
 
@@ -50,10 +49,9 @@
     background: none;
     border: none;
     color: #000000;
-    opacity: 0.4;
-    /* More subtle arrows */
-    width: 50px;
-    height: 80px;
+    opacity: 0.3;
+    width: 44px;
+    height: 60px;
     cursor: pointer;
     z-index: 10;
     display: flex;
@@ -62,34 +60,22 @@
     transition: all 0.3s ease;
 }
 
-/* Hide navigation arrows on mobile to favor swiping */
 @media (max-width: 768px) {
     .nav-arrow {
         display: none;
+        /* Swipe is better on mobile */
     }
 }
 
-.nav-arrow:hover {
-    opacity: 1;
-}
-
 .nav-arrow svg {
-    width: 40px;
-    height: 40px;
-}
-
-.nav-arrow.prev {
-    left: 0;
-}
-
-.nav-arrow.next {
-    right: 0;
+    width: 32px;
+    height: 32px;
 }
 
 /* Thumbnails Section */
 .thumbnails-wrapper {
     background-color: var(--bg-color);
-    padding: 10px 0;
+    padding: 15px 0;
     display: flex;
     align-items: center;
     width: 100%;
@@ -100,8 +86,8 @@
 .thumbnails-scroll {
     display: flex;
     overflow-x: auto;
-    gap: 8px;
-    padding: 0 10px;
+    gap: 12px;
+    padding: 0 15px;
     scrollbar-width: none;
     -ms-overflow-style: none;
     flex: 1;
@@ -112,23 +98,24 @@
 }
 
 .thumb-item {
-    min-width: 60px;
-    /* Smaller thumbnails on mobile */
-    height: 80px;
-    border: 1px solid transparent;
-    /* Thinner border */
+    min-width: 85px;
+    /* Larger, more readable on mobile */
+    height: 120px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
     opacity: 0.4;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     flex-shrink: 0;
-    border-radius: 2px;
+    border-radius: 4px;
     overflow: hidden;
+    background-color: #000;
 }
 
 .thumb-item.active {
     border-color: #fff;
     opacity: 1;
-    transform: scale(1.05);
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .thumb-item img {
@@ -137,10 +124,10 @@
     object-fit: cover;
 }
 
-/* Desktop sizing adjustments */
-@media (min-width: 421px) {
+/* Specific adjustment for very small screens */
+@media (max-width: 360px) {
     .thumb-item {
-        min-width: 80px;
+        min-width: 70px;
         height: 100px;
     }
 }

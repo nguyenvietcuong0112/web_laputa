@@ -1,5 +1,6 @@
 .footer {
-    padding: 2rem 2rem 4rem;
+    padding: 1rem 2rem 2rem;
+    /* Reduced padding for mobile */
     text-align: center;
     color: white;
     background-color: var(--bg-color);
@@ -8,34 +9,44 @@
 .menu-hint {
     font-family: var(--font-clean);
     font-style: italic;
-    font-size: 14px;
-    margin-bottom: 2rem;
-    opacity: 0.9;
+    font-size: 13px;
+    margin-bottom: 1.5rem;
+    opacity: 0.7;
 }
 
 .divider-small {
-    width: 40px;
-    height: 2px;
-    background-color: #555;
-    margin: 0 auto 2rem;
+    width: 30px;
+    height: 1px;
+    background-color: #333;
+    margin: 0 auto 1.5rem;
 }
 
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
 }
 
 .contact-item {
     font-family: var(--font-clean);
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.4;
     font-weight: 400;
+    opacity: 0.9;
 }
 
-/* Redesigning for clean look */
 .menu-header {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media (min-width: 421px) {
+    .footer {
+        padding: 2rem 2rem 4rem;
+    }
+
+    .contact-item {
+        font-size: 16px;
+    }
 }
