@@ -26,7 +26,33 @@ const images = [
 
 const Gallery = () => {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [touchStart, setTouchStart] = useState(null);
+    const [touchEnd, setTouchEnd] = useState(null);
+
     const thumbRef = useRef(null);
+
+    // Minimum swipe distance (pixels)
+    const minSwipeDistance = 50;
+
+    const onTouchStart = (e) => {
+        setTouchEnd(null);
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+
+    const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+
+    const onTouchEnd = () => {
+        if (!touchStart || !touchEnd) return;
+        const distance = touchStart - touchEnd;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+
+        if (isLeftSwipe) {
+            handleNext();
+        } else if (isRightSwipe) {
+            handlePrev();
+        }
+    };
 
     const handleNext = () => {
         setActiveIndex((prev) => (prev + 1) % images.length);
@@ -54,7 +80,12 @@ const Gallery = () => {
     return (
         <div className="gallery-container">
             {/* Main View Slider */}
-            <div className="main-view">
+            <div
+                className="main-view"
+                onTouchStart={onTouchStart}
+                onTouchMove={onTouchMove}
+                onTouchEnd={onTouchEnd}
+            >
                 <button className="nav-arrow prev" onClick={handlePrev}>
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />

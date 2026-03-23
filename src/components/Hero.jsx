@@ -1,5 +1,6 @@
 import './Hero.css';
 import bgHeader from '../assets/bg_header.jpg';
+import iconLogo from '../assets/icon.jpg';
 
 const Hero = () => {
     return (
@@ -10,7 +11,7 @@ const Hero = () => {
             <div className="profile">
                 <div className="profile-img-wrapper">
                     <img
-                        src="https://w.ladicdn.com/s450x450/5c8b2b6c039c0e4c10d3b06c/355680542_124654517322230_7065583798754342845_n-20231008144604-6qphx.jpg"
+                        src={iconLogo}
                         alt="The Laputa Logo"
                         className="profile-logo"
                     />

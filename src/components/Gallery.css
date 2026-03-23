@@ -12,7 +12,8 @@
     margin-bottom: 1rem;
     background-color: var(--bg-color);
     overflow: hidden;
-    /* Hide non-active slides */
+    touch-action: pan-y;
+    /* Allow vertical scroll while swiping horizontally */
 }
 
 .slider-container {
@@ -22,8 +23,8 @@
 
 .slider-track {
     display: flex;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    /* Professional easing */
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    /* Faster, snappy transition */
     width: 100%;
 }
 
@@ -49,7 +50,8 @@
     background: none;
     border: none;
     color: #000000;
-    opacity: 0.6;
+    opacity: 0.4;
+    /* More subtle arrows */
     width: 50px;
     height: 80px;
     cursor: pointer;
@@ -58,6 +60,13 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+}
+
+/* Hide navigation arrows on mobile to favor swiping */
+@media (max-width: 768px) {
+    .nav-arrow {
+        display: none;
+    }
 }
 
 .nav-arrow:hover {
@@ -80,13 +89,12 @@
 /* Thumbnails Section */
 .thumbnails-wrapper {
     background-color: var(--bg-color);
-    /* Updated to match new theme */
     padding: 10px 0;
     display: flex;
     align-items: center;
     width: 100%;
     overflow: hidden;
-    border-top: 1px solid #222;
+    border-top: 1px solid #1a1a1a;
 }
 
 .thumbnails-scroll {
@@ -104,14 +112,16 @@
 }
 
 .thumb-item {
-    min-width: 70px;
-    height: 90px;
-    border: 2px solid transparent;
+    min-width: 60px;
+    /* Smaller thumbnails on mobile */
+    height: 80px;
+    border: 1px solid transparent;
+    /* Thinner border */
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 0.4;
     transition: all 0.2s ease;
     flex-shrink: 0;
-    border-radius: 4px;
+    border-radius: 2px;
     overflow: hidden;
 }
 
@@ -125,4 +135,12 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Desktop sizing adjustments */
+@media (min-width: 421px) {
+    .thumb-item {
+        min-width: 80px;
+        height: 100px;
+    }
 }
