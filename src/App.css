@@ -1,0 +1,5 @@
+/* App.css is mostly empty as layout is handled by index.css and individual component CSS */
+.app-container {
+  /* Ensure the container is always on top and centered */
+  margin: 0 auto;
+}

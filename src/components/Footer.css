@@ -1,0 +1,41 @@
+.footer {
+    padding: 2rem 2rem 4rem;
+    text-align: center;
+    color: white;
+    background-color: var(--bg-color);
+}
+
+.menu-hint {
+    font-family: var(--font-clean);
+    font-style: italic;
+    font-size: 14px;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.divider-small {
+    width: 40px;
+    height: 2px;
+    background-color: #555;
+    margin: 0 auto 2rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    font-family: var(--font-clean);
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+/* Redesigning for clean look */
+.menu-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
